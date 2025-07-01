@@ -1,6 +1,7 @@
 'use client';
 
 import { useRef } from 'react';
+import Image from 'next/image';
 import { useGSAP } from '@gsap/react';
 import gsap from 'gsap';
 import { animateWithGsap } from '@/lib/animations';
@@ -68,17 +69,21 @@ const Features = () => {
             <div className="flex flex-col w-full relative">
               <div className="feature-video-container">
                 <div className="overflow-hidden flex-1 h-[50vh]">
-                  <img 
+                  <Image 
                     src={explore1Img} 
                     alt="iPhone titanium design showcase" 
-                    className="feature-video g_grow" 
+                    className="feature-video g_grow"
+                    fill
+                    style={{ objectFit: 'cover' }}
                   />
                 </div>
                 <div className="overflow-hidden flex-1 h-[50vh]">
-                  <img 
+                  <Image 
                     src={explore2Img} 
                     alt="iPhone titanium material close-up" 
-                    className="feature-video g_grow" 
+                    className="feature-video g_grow"
+                    fill
+                    style={{ objectFit: 'cover' }}
                   />
                 </div>
               </div>

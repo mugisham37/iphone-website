@@ -1,3 +1,5 @@
+import * as THREE from 'three';
+
 // Animation Types
 export interface AnimationProps {
   duration?: number;
@@ -54,4 +56,34 @@ export interface TimelineRef {
       y: number;
     };
   };
+}
+
+// Video Carousel Types
+export interface VideoState {
+  isEnd: boolean;
+  startPlay: boolean;
+  videoId: number;
+  isLastVideo: boolean;
+  isPlaying: boolean;
+}
+
+export type VideoProcessType = 'video-end' | 'video-last' | 'video-reset' | 'pause' | 'play';
+
+// 3D Model Types
+export interface ModelViewProps {
+  index: number;
+  groupRef: React.RefObject<THREE.Group>;
+  gsapType: string;
+  // Using any for OrbitControls ref due to complex @react-three/drei typing
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  controlRef: React.RefObject<any>;
+  setRotationState: (angle: number) => void;
+  size: 'small' | 'large';
+  item: ModelColor;
+}
+
+export interface IPhoneProps {
+  scale: [number, number, number];
+  item: ModelColor;
+  size: 'small' | 'large';
 }

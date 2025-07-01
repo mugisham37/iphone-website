@@ -1,6 +1,7 @@
 'use client';
 
 import { useRef } from 'react';
+import Image from 'next/image';
 import { useGSAP } from '@gsap/react';
 import gsap from 'gsap';
 import { animateWithGsap } from '@/lib/animations';
@@ -33,7 +34,7 @@ const HowItWorks = () => {
     <section className="common-padding">
       <div className="screen-max-width">
         <div id="chip" className="flex-center w-full my-20">
-          <img 
+          <Image 
             src={chipImg} 
             alt="A17 Pro chip" 
             width={180} 
@@ -55,10 +56,12 @@ const HowItWorks = () => {
         <div className="mt-10 md:mt-20 mb-14">
           <div className="relative h-full flex-center">
             <div className="overflow-hidden">
-              <img 
+              <Image 
                 src={frameImg}
                 alt="iPhone gaming frame"
                 className="bg-transparent relative z-10"
+                width={400}
+                height={400}
               />
             </div>
             <div className="hiw-video">
